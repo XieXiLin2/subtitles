@@ -1,0 +1,703 @@
+1
+00:00:04,560 --> 00:00:09,360
+Hello everyone, and welcome to the 
+Minecraft Transit Railway tutorials,  
+
+2
+00:00:09,360 --> 00:00:12,320
+new and updated for 4.0.0.
+
+3
+00:00:12,320 --> 00:00:15,280
+In this episode, we will cover everything you  
+
+4
+00:00:15,280 --> 00:00:18,960
+need to know to get your very 
+first railway up and running.
+
+5
+00:00:18,960 --> 00:00:20,141
+Let's get started!
+
+6
+00:00:24,240 --> 00:00:30,800
+One of the main goals of Minecraft Transit Railway 
+is to provide fully automated train operation.
+
+7
+00:00:30,800 --> 00:00:33,520
+Unlike other railway mods in Minecraft,  
+
+8
+00:00:33,520 --> 00:00:38,560
+train spawning and movement is 
+programmed from a centralised dashboard.
+
+9
+00:00:38,560 --> 00:00:42,720
+Simulation occurs whether 
+world chunks are loaded or not.
+
+10
+00:00:42,720 --> 00:00:46,960
+Therefore, there are four main 
+components to a railway system.
+
+11
+00:00:46,960 --> 00:00:56,960
+Rails, stations, routes, and depots.
+
+12
+00:00:56,960 --> 00:01:00,320
+Let's see how these pieces come together.
+
+13
+00:01:00,320 --> 00:01:03,040
+There are a few categories of rails.
+
+14
+00:01:03,040 --> 00:01:08,080
+Normal two-way rails allow trains 
+to move on them in both directions,  
+
+15
+00:01:08,080 --> 00:01:12,800
+while one-way rails only allow 
+movement in one direction.
+
+16
+00:01:12,800 --> 00:01:16,080
+These rails have a speed 
+limit associated with them.
+
+17
+00:01:17,200 --> 00:01:22,080
+Platform and siding rails belong 
+to the specialised category.
+
+18
+00:01:22,080 --> 00:01:27,680
+Platforms are where trains can open their 
+doors and pick up and drop off passengers.
+
+19
+00:01:27,680 --> 00:01:32,720
+Sidings are where trains spawn 
+and start and finish their routes.
+
+20
+00:01:32,720 --> 00:01:37,360
+Turn back rails also belong to this 
+category and they allow trains to  
+
+21
+00:01:37,360 --> 00:01:41,360
+change directions in the middle of a route.
+
+22
+00:01:41,360 --> 00:01:44,560
+Let's start with a very basic layout.
+
+23
+00:01:44,560 --> 00:01:47,920
+We will build a siding rail, two platform rails,  
+
+24
+00:01:47,920 --> 00:01:53,200
+and some normal two-way rails to 
+connect everything up like this.
+
+25
+00:01:53,200 --> 00:01:58,720
+We will then programme the train to spawn 
+at the siding, move to the first platform,  
+
+26
+00:01:58,720 --> 00:02:03,760
+move to the second platform, 
+then return to the siding.
+
+27
+00:02:03,760 --> 00:02:08,384
+To build this in Minecraft, we will need 
+some Rail Nodes and Rail Connectors.
+
+28
+00:02:14,080 --> 00:02:17,280
+Place down two Rail Nodes 
+and use the Rail Connector  
+
+29
+00:02:17,280 --> 00:02:20,364
+to right-click the two nodes to build the rail.
+
+30
+00:02:32,240 --> 00:02:39,200
+Rail Nodes can be oriented in different directions 
+which will determine the shape of the rail.
+
+31
+00:03:03,120 --> 00:03:08,560
+Here are some examples of straight 
+tracks, S-curves, and 90° curves.
+
+32
+00:03:10,000 --> 00:03:14,880
+To remove a rail, simply break the 
+Rail Nodes or use the Rail Remover  
+
+33
+00:03:14,880 --> 00:03:18,350
+by right-clicking on the nodes of the track.
+
+34
+00:03:51,120 --> 00:03:53,920
+Now we will build the siding rail.
+
+35
+00:03:53,920 --> 00:03:57,840
+An important thing to note is that 
+the length of the rail must be at  
+
+36
+00:03:57,840 --> 00:04:01,120
+least the length of the train we want to spawn.
+
+37
+00:04:01,120 --> 00:04:05,442
+For this tutorial, let's build a siding of 40 m.
+
+38
+00:04:12,480 --> 00:04:16,160
+Next, we will build the two platform rails.
+
+39
+00:04:16,160 --> 00:04:20,560
+Generally, the platform should 
+be the same length as the siding.
+
+40
+00:04:20,560 --> 00:04:23,414
+So, let's build them 40 m long.
+
+41
+00:05:01,760 --> 00:05:06,800
+Finally, let's connect everything 
+up with the two-way Rail Connector.
+
+42
+00:05:06,800 --> 00:05:11,600
+For this tutorial, we will 
+enforce a speed limit of 80 km/h.
+
+43
+00:05:41,760 --> 00:05:44,480
+Let's go back to our track diagram.
+
+44
+00:05:44,480 --> 00:05:49,840
+As we mentioned, the train should spawn 
+at the siding, move to the first platform,  
+
+45
+00:05:49,840 --> 00:05:54,080
+move to the second platform, 
+then return to the siding.
+
+46
+00:05:54,080 --> 00:06:00,640
+To programme our trains to follow this 
+pattern, we will use the Railway Dashboard.
+
+47
+00:06:00,640 --> 00:06:04,320
+Right-click the Railway Dashboard item to open it.
+
+48
+00:06:04,320 --> 00:06:09,600
+On the left, there are three tabs: 
+"Stations", "Routes", and "Depots".
+
+49
+00:06:09,600 --> 00:06:12,640
+The "Stations" tab is currently selected.
+
+50
+00:06:12,640 --> 00:06:15,680
+On the right, there is a map of the world.
+
+51
+00:06:15,680 --> 00:06:22,160
+We can use the zoom buttons on the bottom right 
+corner or the scroll wheel to zoom in and out.
+
+52
+00:06:22,160 --> 00:06:25,040
+The blue dot marks our current location  
+
+53
+00:06:25,040 --> 00:06:30,160
+and clicking and dragging on 
+the map moves the map around.
+
+54
+00:06:30,160 --> 00:06:33,760
+Let's get started by defining a station area.
+
+55
+00:06:33,760 --> 00:06:36,080
+Click on "Add Station".
+
+56
+00:06:36,080 --> 00:06:40,960
+Click and drag on the map to draw 
+a rectangular area for the station.
+
+57
+00:06:41,920 --> 00:06:46,640
+We will call the first station Desert Plains.
+
+58
+00:06:46,640 --> 00:06:49,040
+Press "Done" when finished.
+
+59
+00:06:49,040 --> 00:06:57,040
+We will do the same thing for the 
+second station called South Sand Bay.
+
+60
+00:06:57,040 --> 00:07:00,880
+Next, we will create a route 
+for the trains to run on.
+
+61
+00:07:00,880 --> 00:07:04,960
+Let's head over to the "Routes" 
+tab and click on "Add Route".
+
+62
+00:07:04,960 --> 00:07:08,160
+We will call it "Line 1||Outbound" for now.
+
+63
+00:07:08,720 --> 00:07:14,080
+Anything after the two pipe characters 
+is considered the route variation.
+
+64
+00:07:14,080 --> 00:07:19,120
+The pipe character can be typed 
+by pressing Shift+Backslash.
+
+65
+00:07:19,120 --> 00:07:25,600
+When we zoom into the first station that we 
+have created, we will see a small white square.
+
+66
+00:07:25,600 --> 00:07:29,200
+This represents the platform 
+rail that we just built.
+
+67
+00:07:29,200 --> 00:07:32,800
+Click on this square to add it to our route.
+
+68
+00:07:32,800 --> 00:07:36,640
+Notice that the station name 
+now appears on the left.
+
+69
+00:07:36,640 --> 00:07:40,080
+Let's do the same for the 
+second platform we built.
+
+70
+00:07:40,080 --> 00:07:42,720
+This one is at the second station.
+
+71
+00:07:42,720 --> 00:07:46,400
+Clicking on it adds the 
+station to the left as well.
+
+72
+00:07:46,400 --> 00:07:48,880
+Press "Done" when finished.
+
+73
+00:07:48,880 --> 00:07:53,920
+Finally, we need to make a depot so 
+that our trains can appear in the world.
+
+74
+00:07:53,920 --> 00:07:56,160
+Go to the "Depots" tab.
+
+75
+00:07:56,160 --> 00:08:02,720
+Notice how the stations and platforms disappeared, 
+but our siding showed up as a small white square.
+
+76
+00:08:02,720 --> 00:08:07,680
+Let's click on "Add Depot" and draw 
+a rectangular area over the siding.
+
+77
+00:08:07,680 --> 00:08:14,240
+Don't forget to type in a descriptive name 
+for the depot and press "Done" when finished.
+
+78
+00:08:14,240 --> 00:08:19,120
+By default, the siding will have 
+no train associated with it.
+
+79
+00:08:19,120 --> 00:08:23,040
+Click on the siding, which also 
+appears as a small white square  
+
+80
+00:08:23,040 --> 00:08:27,120
+to configure the train cars that will be spawned.
+
+81
+00:08:27,120 --> 00:08:30,400
+Under selected vehicle, click "Edit".
+
+82
+00:08:30,400 --> 00:08:35,680
+For this tutorial, we will start with 
+a cab car in the forward orientation,  
+
+83
+00:08:35,680 --> 00:08:41,760
+some trailers, and finally a cab 
+car in the backward orientation.
+
+84
+00:08:41,760 --> 00:08:45,040
+Keep in mind that each car has a set length.
+
+85
+00:08:45,040 --> 00:08:51,040
+Because our siding is 40 m, we can 
+only fit a few cars on the siding.
+
+86
+00:08:51,040 --> 00:08:56,480
+We can see the length of each 
+car in the train selection menu.
+
+87
+00:08:58,560 --> 00:09:05,120
+We will also set the maximum 
+trains on the siding to 1 for now.
+
+88
+00:09:05,120 --> 00:09:09,360
+To make our depot functional, 
+we will need to edit it.
+
+89
+00:09:09,360 --> 00:09:16,720
+On the left pane, hover over the depot and click 
+on the edit button, which looks like a pencil.
+
+90
+00:09:16,720 --> 00:09:20,400
+First, we will click on "Edit Instructions".
+
+91
+00:09:20,400 --> 00:09:25,520
+We need to assign our route to the depot 
+so that the trains will know where to go.
+
+92
+00:09:27,360 --> 00:09:32,880
+On the left, there are 24 sliders, 
+one for each in-game hour.
+
+93
+00:09:32,880 --> 00:09:38,640
+Each slider will determine the maximum 
+frequency at which trains will leave the depot.
+
+94
+00:09:38,640 --> 00:09:43,360
+For example, if I set it to 
+2.5 trains per Minecraft hour,  
+
+95
+00:09:43,360 --> 00:09:49,200
+it means that the trains will depart the 
+depot no less than 20 real-time seconds apart.
+
+96
+00:09:49,760 --> 00:09:55,040
+Bear in mind that this defines the maximum 
+frequency, meaning that if there are no  
+
+97
+00:09:55,040 --> 00:10:01,440
+trains left in the depot, nothing will leave 
+the depot even after 20 seconds have passed.
+
+98
+00:10:01,440 --> 00:10:07,840
+Finally, click on "Refresh Path" to generate 
+the actual path trains will take on our railway.
+
+99
+00:10:07,840 --> 00:10:10,560
+It is very important to click this button every  
+
+100
+00:10:10,560 --> 00:10:15,840
+time we change something such as the 
+track layout or train instructions.
+
+101
+00:10:15,840 --> 00:10:19,360
+Press Esc on the keyboard 
+to return to the Dashboard  
+
+102
+00:10:19,360 --> 00:10:24,160
+and press Esc again to return to the game.
+
+103
+00:10:24,160 --> 00:10:27,360
+The train should start departing from the siding.
+
+104
+00:10:27,360 --> 00:10:31,520
+To see upcoming arrivals and a 
+system map of the whole network,  
+
+105
+00:10:31,520 --> 00:10:38,080
+open the Railway Dashboard again 
+and click on "Transport System Map".
+
+106
+00:10:38,080 --> 00:10:43,360
+When clicking on Desert Plains, 
+we can see the upcoming arrivals.
+
+107
+00:10:45,600 --> 00:10:49,120
+At South Sand Bay, since 
+all trains are terminating,  
+
+108
+00:10:49,120 --> 00:10:55,440
+we can tick the "Show Terminating" 
+box to see the arrivals.
+
+109
+00:10:55,440 --> 00:10:58,320
+In the "Routes" tab, we can click on our route and  
+
+110
+00:10:58,320 --> 00:11:05,120
+see the live train positions for Line 
+1 with the route variation "Outbound".
+
+111
+00:11:05,120 --> 00:11:07,360
+Let's go back to Minecraft.
+
+112
+00:11:07,360 --> 00:11:10,640
+Unfortunately, there is one problem.
+
+113
+00:11:10,640 --> 00:11:16,080
+The train doors are not opening, so 
+there is no way to board the trains.
+
+114
+00:11:16,080 --> 00:11:18,800
+Platform blocks, Automatic Platform Gates,  
+
+115
+00:11:18,800 --> 00:11:23,920
+and Platform Screen Doors can be used 
+to tell the train which doors to open.
+
+116
+00:11:23,920 --> 00:11:29,000
+For this tutorial, we will place 
+Platform blocks along our platform rail.
+
+117
+00:11:38,320 --> 00:11:41,920
+Notice that only the doors next 
+to Platform blocks will open.
+
+118
+00:11:55,680 --> 00:11:59,680
+Congratulations, our first 
+railway system is complete!
+
+119
+00:11:59,680 --> 00:12:05,229
+If this tutorial has helped you so far, 
+remember to subscribe to the channel!
+
+120
+00:12:10,800 --> 00:12:15,360
+Earlier, we configured our 
+siding to only spawn one train.
+
+121
+00:12:15,360 --> 00:12:20,960
+If we have more than one train on our 
+system, there is a risk of jamming.
+
+122
+00:12:20,960 --> 00:12:25,760
+Also, passengers can take the train 
+from Desert Plains to South Sand Bay,  
+
+123
+00:12:25,760 --> 00:12:32,080
+but not the other way around because trains 
+at South Sand Bay go straight to the siding.
+
+124
+00:12:32,080 --> 00:12:36,560
+To fix this, let's modify our setup a little.
+
+125
+00:12:36,560 --> 00:12:41,200
+First, let's build a second platform 
+at Desert Plains for inbound trains  
+
+126
+00:12:41,200 --> 00:12:43,872
+and connect this platform to the main route.
+
+127
+00:13:43,120 --> 00:13:46,255
+Next, we will rename the platform to "2".
+
+128
+00:13:57,360 --> 00:14:01,321
+Let's set up a second route 
+called "Line 1||Inbound".
+
+129
+00:14:05,280 --> 00:14:09,321
+Just like before, we will select 
+our platforms for this route.
+
+130
+00:14:17,440 --> 00:14:21,600
+We will also copy the route colour 
+from the "Outbound" variation so  
+
+131
+00:14:21,600 --> 00:14:26,882
+that the two route variations, "Inbound" 
+and "Outbound", will be grouped together.
+
+132
+00:14:33,040 --> 00:14:41,280
+Now head over to the "Depots" tab, click on the 
+siding, and tick the "Unlimited Vehicles" box.
+
+133
+00:14:46,800 --> 00:14:51,603
+Edit the depot and add the 
+"Inbound" route to our instructions.
+
+134
+00:14:59,520 --> 00:15:02,788
+Let's also reduce the frequencies a bit.
+
+135
+00:15:07,920 --> 00:15:10,560
+Remember to click "Refresh Path" again.
+
+136
+00:15:12,480 --> 00:15:17,280
+With our current setup, more than one train 
+can run through the system without jamming,  
+
+137
+00:15:17,280 --> 00:15:22,320
+and passengers can now travel from 
+South Sand Bay back to Desert Plains.
+
+138
+00:15:22,320 --> 00:15:25,520
+Let's see how this looks in game.
+
+139
+00:15:25,520 --> 00:15:30,000
+We can just walk right on when the 
+doors are open to ride the train.
+
+140
+00:16:57,440 --> 00:17:02,000
+We can also go back to the Transport System 
+Map to look at the arrivals and routes.
+
+141
+00:17:16,320 --> 00:17:18,880
+Thank you everyone for watching the first episode  
+
+142
+00:17:18,880 --> 00:17:22,960
+of the Minecraft Transit 
+Railway Tutorials for 4.0.0.
+
+143
+00:17:22,960 --> 00:17:27,760
+Today we learned how to set up our very 
+first railway by building rails and  
+
+144
+00:17:27,760 --> 00:17:32,800
+configuring the stations, routes, and 
+depots through the Railway Dashboard.
+
+145
+00:17:32,800 --> 00:17:35,840
+In the next episode, we will explore other modes  
+
+146
+00:17:35,840 --> 00:17:40,320
+of transport and important 
+blocks for our stations.
+
+147
+00:17:40,320 --> 00:17:45,600
+If you enjoyed this tutorial, please remember 
+to like the video and subscribe to the channel,  
+
+148
+00:17:45,600 --> 00:17:49,200
+and comment down below if you 
+have any questions for me.
+
+149
+00:17:49,200 --> 00:17:52,480
+I have put some useful links 
+down in the description as well,  
+
+150
+00:17:52,480 --> 00:17:55,120
+so be sure to take a look at that.
+
+151
+00:17:55,120 --> 00:17:58,894
+Thank you so much for watching and 
+I'll see you in the next video.
