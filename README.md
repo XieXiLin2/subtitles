@@ -6,7 +6,7 @@
 
 _Personal subtitle storage_
 
-![ZianTT 我喜欢你](https://img.shields.io/badge/ZianTT-I_Love_You-purple?style=flat-square)
+[![ZianTT 我喜欢你](https://img.shields.io/badge/ZianTT-I_Love_You-purple?style=flat-square)](http://ziantt.top/)
 
 </div>
 
